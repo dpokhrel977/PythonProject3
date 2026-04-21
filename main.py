@@ -28,7 +28,7 @@ form PayPal, which was acquired by eBay in 2002. Musk also became an American ci
     2. Two interesting facts about person
     """
 
-    summary_prompt_template = PromptTemplate(input_variables=summary_template, template=summary_template)
+    summary_prompt_template = PromptTemplate(input_variables=["information"], template=summary_template)
 
     llm = ChatOpenAI(temperature=0, model="gpt-5.4-mini")
     # define chain.
@@ -36,7 +36,7 @@ form PayPal, which was acquired by eBay in 2002. Musk also became an American ci
     # create response object
     response = chain.invoke(input={information: information})
     print(response.content)
-   # print(summary_prompt_template)
+    # print(summary_prompt_template)
     print_hi(information)
 
 
